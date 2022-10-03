@@ -88,6 +88,8 @@ button {
 .header-container {
   display: flex;
   align-items: center;
+  height: 80px;
+  /* !!!!!!!!!  Костиль 91, 103, 178 !!!!!!!!!!*/
 }
 .page-nav {
   display: flex;
@@ -98,7 +100,8 @@ button {
   display: flex;
   column-gap: 50px;
   padding-top: 32px;
-  padding-bottom: 32px;
+  /* padding-bottom: 32px;
+ */
 }
 .contact-list {
   display: flex;
@@ -141,6 +144,7 @@ button {
 }
 
 .link {
+  display: block;
   text-decoration: none;
   font-family: var(--primary-font);
   font-style: normal;
@@ -149,6 +153,10 @@ button {
   line-height: 1.15;
   letter-spacing: 0.02em;
   color: var(--primaru-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link:hover,
 .link:focus {
@@ -161,6 +169,16 @@ button {
   color: var(--accent-color);
 }
 
+.link-current::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  margin-top: 28px;
+}
+
 .portfolio-link,
 .studio-link {
   color: var(--accent-color);
@@ -171,6 +189,10 @@ button {
   height: 12px;
   fill: var(--additional-text-color);
   margin-right: 10px;
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-mail:hover .header-icon,
@@ -184,10 +206,6 @@ button {
 }
 
 .contact-mail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   font-family: var(--primary-font);
   font-style: normal;
   font-weight: 500;
@@ -196,6 +214,10 @@ button {
   letter-spacing: 0.02em;
   color: var(--additional-text-color);
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-tel {
   font-family: var(--primary-font);
@@ -206,6 +228,10 @@ button {
   letter-spacing: 0.02em;
   color: var(--additional-text-color);
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-mail:hover,
@@ -271,6 +297,11 @@ button {
   display: block;
   margin: 0 auto;
   padding: 10px 32px;
+
+  transition-property: color;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -374,6 +405,32 @@ button {
   flex-wrap: wrap;
   column-gap: 30px;
 }
+
+.what-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.what-overlay {
+  position: absolute;
+  height: 25%;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.what-overlay-text {
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent-text-color);
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
 /* =========================== OUR TEAM ====================== */
 
 .team {
@@ -443,8 +500,8 @@ button {
   height: 44px;
   margin: 0 auto;
   padding-top: 16px;
+  column-gap: 10px;
 }
-
 .social-list-item-link {
   display: flex;
   justify-content: center;
@@ -452,13 +509,20 @@ button {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  column-gap: 10px;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-icon {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-item-link:hover,
 .social-list-item-link:focus {
@@ -497,6 +561,10 @@ button {
   border: 1px solid #afb1b8;
   border-radius: 4px;
 
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -506,10 +574,16 @@ button {
 .clients-icon {
   fill: #afb1b8;
   padding: 16px 32px;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-item:hover,
 .clients-item:focus {
   color: var(--accent-color);
+  border-color: var(--accent-color);
+  cursor: pointer;
 }
 
 .clients-item:hover .clients-icon,
@@ -541,6 +615,8 @@ button {
 .menu-btn:focus {
   color: var(--accent-text-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-text {
   border: #eeeeee 1px solid;
@@ -562,9 +638,43 @@ button {
 .portfolio-link:hover,
 .portfolio-link:focus {
   background: #ffffff;
-  border: 1px solid #eeeeee;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transform: translateY(0%);
+}
+
+.portfolio-thumb {
+  display: inline-block;
+  content: "";
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  width: 370px;
+  height: 295px;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-overlay-text {
+  background-color: rgba(33, 150, 243, 0.9);
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--accent-text-color);
+  padding: 63px 24px;
+}
+
+.portfolio-link :hover .portfolio-overlay,
+.portfolio-link :focus .portfolio-overlay {
+  transform: translateY(0%);
 }
 
 .portfolio-item-title {
@@ -591,6 +701,7 @@ button {
   padding-bottom: 20px;
   padding-left: 24px;
 }
+
 /* ============ FOOTER ================= */
 .footer {
   background-color: var(--main-background-color);
@@ -673,12 +784,20 @@ button {
   height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon {
   width: 20px;
   height: 20px;
   fill: var(--accent-text-color);
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon-link:hover,
 .footer-icon-link:focus {
