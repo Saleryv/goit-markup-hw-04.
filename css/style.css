@@ -88,8 +88,6 @@ button {
 .header-container {
   display: flex;
   align-items: center;
-  height: 80px;
-  /* !!!!!!!!!  Костиль 91, 103, 178 !!!!!!!!!!*/
 }
 .page-nav {
   display: flex;
@@ -100,8 +98,6 @@ button {
   display: flex;
   column-gap: 50px;
   padding-top: 32px;
-  /* padding-bottom: 32px;
- */
 }
 .contact-list {
   display: flex;
@@ -169,19 +165,13 @@ button {
   color: var(--accent-color);
 }
 
-.link-current::after {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-  margin-top: 28px;
-}
-
-.portfolio-link,
-.studio-link {
+.portfolio-nav-link,
+.studio-nav-link {
   color: var(--accent-color);
+  border-bottom: 4px solid var(--accent-color);
+  border-radius: 2px;
+  width: 100%;
+  padding-bottom: 28px;
 }
 
 .header-icon {
@@ -520,7 +510,7 @@ button {
   border-radius: 50%;
 
   transition-property: color, background-color;
-  transition-duration: 250ms;
+  transition-duration: 3250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -529,8 +519,8 @@ button {
   height: 20px;
   fill: #afb1b8;
 
-  transition-property: color, background-color;
-  transition-duration: 250ms;
+  transition-property: fill;
+  transition-duration: 3250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -542,9 +532,7 @@ button {
 .social-list-item-link:hover .team-social-icon,
 .social-list-item-link:focus .team-social-icon {
   fill: var(--accent-text-color);
-  background-color: var(--accent-color);
 }
-
 /* ======================== CLIENTS ======================== */
 .clients-title {
   font-family: "Roboto";
