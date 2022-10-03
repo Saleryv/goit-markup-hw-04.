@@ -185,14 +185,20 @@ button {
 }
 
 .header-icon {
-  width: 16px;
-  height: 12px;
   fill: var(--additional-text-color);
   margin-right: 10px;
 
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mail {
+  width: 16px;
+  height: 12px;
+}
+.tel {
+  width: 10px;
+  height: 16px;
 }
 
 .contact-mail:hover .header-icon,
@@ -206,6 +212,7 @@ button {
 }
 
 .contact-mail {
+  display: flex;
   font-family: var(--primary-font);
   font-style: normal;
   font-weight: 500;
@@ -219,7 +226,9 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .contact-tel {
+  display: flex;
   font-family: var(--primary-font);
   font-style: normal;
   font-weight: 500;
@@ -524,6 +533,7 @@ button {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .social-list-item-link:hover,
 .social-list-item-link:focus {
   background-color: var(--accent-color);
